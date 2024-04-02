@@ -1,0 +1,563 @@
+@charset 'utf-8';
+
+body {
+  /* fz2r */
+  font-size: 2rem;
+}
+
+.sub-visual {
+  height: 36rem; /* h36r */
+  background: #000 0 0 / cover;
+}
+
+.company .sub-visual {
+  background-image: url(../img/sub-visual-pic1.jpg);
+}
+
+.franchise .sub-visual {
+  background-image: url(../img/sub-visual-pic2.jpg);
+}
+
+.notice .sub-visual {
+  background-image: url(../img/sub-visual-pic3.jpg);
+}
+
+.financial .sub-visual {
+  background-image: url(../img/sub-visual-pic4.jpg);
+}
+
+.login-wrap .sub-visual {
+  background-color: #fff;
+}
+
+.login-wrap .sub-visual .sub-title h2 {
+  color: #000;
+}
+.login-wrap .sub-visual .sub-title h2::before {
+  background: #000;
+}
+
+.sub-title {
+  /* background: #5f5; */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.sub-title h2 {
+  /* fw800+fz6r+c#fff+lh1.1 */
+  font-weight: 800;
+  font-size: 6rem;
+  color: #fff;
+  line-height: 1.1;
+  animation: reveal-right 1s;
+}
+
+.sub-title h2::before {
+  content: "";
+  display: block;
+  /* w5.5r+h.6r */
+  width: 5.5rem;
+  height: 0.6rem;
+  background: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.greeting {
+  /* p12r-0 */
+  padding: 12rem 0;
+}
+
+.sec-title {
+  text-align: center;
+  /* fw700+fz5r+c */
+  font-weight: 700;
+  font-size: 5rem;
+  color: #000;
+}
+
+.greeting-con {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+}
+
+.greeting-text {
+  width: 77.4rem;
+  /* background: #f55; */
+}
+
+.greeting-text h4 {
+  font-weight: 800;
+  font-size: 6rem;
+  color: var(--title-color);
+}
+.greeting-text h5 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-top: 3.2rem;
+}
+.greeting-text p {
+  font-weight: 500;
+  margin-top: 3.2rem;
+}
+.greeting-text .ceo-sign {
+  margin-top: 3.2rem;
+  display: block;
+}
+.map {
+  height: 50rem;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* 가맹점 개설 절차 */
+.process {
+  padding: 12rem 0;
+}
+
+.process-list {
+  /* background: #5f5; */
+  margin-top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 4rem;
+
+  /* 1. 숫자 자동 증가 이름을 정의 */
+  counter-reset: process-count;
+}
+
+.process-list li {
+  border-top: 3px solid #000;
+  width: 40rem;
+  height: 30rem;
+  padding-top: 3rem;
+
+  /* 2. 숫자가 증가되도록 세팅 */
+  counter-increment: process-count;
+}
+
+.process-list li dl dt {
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--main-color);
+}
+
+/* 3 */
+.process-list li dl dt::before {
+  content: counter(process-count) ". ";
+}
+
+.process-list li dl dd {
+  font-weight: 500;
+  margin-top: 1.6rem;
+}
+
+.btn-wrap {
+  display: flex;
+  gap: 3.6rem;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+/* 공지 & 언론보도 */
+.board {
+  padding: 12rem 0;
+}
+
+.tab-wrap {
+  margin-top: 8rem;
+}
+.tab-menu {
+  /* background: #5f5; */
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.tab-menu a {
+  font-weight: 700;
+  font-size: 3rem;
+  /* border: 1px solid #000; */
+}
+
+.tab-menu a b {
+  display: block;
+  padding: 1rem 0;
+  /* border-bottom: 3px solid #f00; */
+  position: relative;
+}
+
+.tab-menu a b::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 0.3rem;
+  background: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.4s;
+}
+
+.tab-menu a.on {
+  color: var(--main-color);
+}
+
+.tab-menu a.on b::after,
+.tab-menu a:hover b::after {
+  width: 100%;
+}
+
+.tab-search {
+  margin-top: 6rem;
+  background: var(--bg-light);
+  padding: 4.3rem;
+}
+
+.search-wrap {
+  width: 58rem;
+  height: 6rem;
+  border: 2px solid #000;
+  background: #fff;
+  margin: 0 auto;
+  display: flex;
+}
+
+.search-wrap input {
+  width: calc(100% - 6rem);
+  padding: 0 2rem;
+}
+
+.search-wrap button {
+  width: 6rem;
+  height: 5.6rem;
+  background: url(../img/ico-search.svg) no-repeat 50%;
+}
+
+.tab-con {
+  margin-top: 6.9rem;
+}
+
+.tab-con .news-list {
+  /* background: #5f5; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 7rem;
+}
+
+.tab-con .news-list li {
+  border: 1px solid #000;
+  /* w43.2r+h53.2r */
+  width: 43.2rem;
+  height: 53.2rem;
+  position: relative;
+}
+
+.badge-alarm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: var(--main-color);
+  border-radius: 50%; /* bdrs50p */
+
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  z-index: 1;
+}
+
+.badge-category {
+  display: block;
+  border: 1px solid #fff;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+
+  position: absolute;
+  top: 2.8rem;
+  right: 2.4rem;
+  z-index: 1;
+}
+
+.tab-con .news-list li figure {
+  height: 29rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-con .news-list li figure::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+}
+
+.tab-con .news-list li:hover figure::after {
+  opacity: 0.6;
+}
+
+.tab-con .news-list li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.tab-con .news-list li:hover figure img {
+  transform: scale(1.3); /* trf */
+}
+
+.news-con {
+  padding-top: 3.2rem;
+}
+.news-con h4 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--title-color);
+  min-height: 7.2rem; /* mih7.2r */
+}
+.news-con p {
+  margin-top: 1.2rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  min-height: 9rem;
+}
+.news-con span {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+/* 재무정보 */
+.financial-info {
+  padding: 12rem 0;
+}
+
+.financial-info-tbl {
+  margin-top: 8rem; /* mt8r */
+}
+
+.financial-info-tbl > p {
+  text-align: right; /* tar */
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.financial-info-tbl table {
+  width: 100%;
+  border-top: 3px solid #000;
+}
+
+.financial-info-tbl table thead tr th {
+  border-bottom: 1px solid var(--main-color);
+  border-right: 1px solid var(--line-light);
+  height: 5.9rem;
+  vertical-align: middle; /* vam */
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--title-color);
+}
+
+.financial-info-tbl table tbody tr th,
+.financial-info-tbl table tbody tr td {
+  border-bottom: 1px solid var(--line-light);
+  border-right: 1px solid var(--line-light);
+  height: 5.9rem;
+  vertical-align: middle; /* vam */
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.financial-info-tbl table tr :last-child {
+  border-right: none; /* bdrn */
+}
+
+.financial-info-tbl table tr.sum * {
+  background: var(--bg-light);
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.financial-info-tbl table tfoot tr.sum * {
+  border-bottom: 1px solid var(--line-light);
+  border-right: 1px solid var(--line-light);
+  height: 5.9rem;
+  vertical-align: middle; /* vam */
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+.financial-info-tbl table tfoot tr.sum :last-child {
+  border-right: none; /* bdrn */
+}
+
+.grouphome {
+  padding: 12rem 0;
+}
+
+.grouphome .sec-title > p {
+  margin-top: 2rem;
+}
+
+.grouphome-info {
+  margin-top: 3rem;
+}
+
+.grouphome-info table {
+  width: 100%;
+  border-top: 3px solid var(--main-color);
+}
+
+.grouphome-info table th {
+  width: 22.551%;
+  border-right: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+  background: var(--bg-light);
+  padding: 1.5rem;
+  vertical-align: middle; /* vam */
+}
+
+.grouphome-info table td {
+  border-bottom: 1px solid var(--line-light);
+  padding: 1.5rem;
+}
+
+.grouphome-info table td li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.grouphome-info table td li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--main-color);
+}
+
+/* 회원 로그인 */
+.member-login {
+  width: 66rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 0 12rem;
+  /* background: #ff5; */
+}
+
+.member-login p {
+  margin-top: 1.8rem;
+}
+
+.form-login {
+  /* border: 1px solid #000 */
+  margin-top: 5.4rem;
+  font-size: 1.8rem;
+}
+
+.mem-type {
+  display: flex;
+  justify-content: center;
+  gap: 5.6rem;
+}
+
+.mem-type > div {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.f-row {
+  background: #5f5;
+  position: relative;
+  margin-top: 3.2rem;
+}
+
+.f-row label {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+
+.f-row input {
+  width: 100%;
+  height: 6rem;
+  border: 1px solid #000;
+  transition: 0.4s;
+  padding: 2rem;
+}
+
+.f-row input:hover {
+  border-color: var(--main-color);
+}
+
+.f-row input:focus {
+  background: #f5f5f5;
+}
+
+.f-row input:focus + label {
+  top: 22%;
+  font-size: 1.2rem;
+}
+
+.form-login button[type="submit"] {
+  width: 100%;
+  height: 6rem;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.save-id {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 4rem;
+  font-weight: 700;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  /* background: #f55; */
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+}
+
+input[type="checkbox"]:checked + label::before {
+  background: #000 url(http://moodang.dothome.co.kr/check.png) no-repeat 50% /50%;
+}

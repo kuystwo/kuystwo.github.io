@@ -1,0 +1,266 @@
+@charset 'utf-8';
+
+/* 웹폰트 정의 */
+
+@font-face {
+  font-family: 'Cafe24ClassicType-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"),
+    url("../fonts/Pretendard-Regular.woff2") format("woff2"),
+    url("../fonts/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PT";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"),
+    url("../fonts/Pretendard-Medium.woff2") format("woff2"),
+    url("../fonts/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PT";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"),
+    url("../fonts/Pretendard-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Pretendard-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PT";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"),
+    url("../fonts/Pretendard-Bold.woff2") format("woff2"),
+    url("../fonts/Pretendard-Bold.woff") format("woff");
+}
+
+:root {
+  font-size: 100%; /* fz100p = 16px */
+  font-size: 62.5%; /* fz62.5p = 10px */
+  --main-color: #12562f;
+  --text-color: #666;
+  --title-color: #232f28;
+  --bg-dark: #232f28;
+  --bg-light: #f3f6f6;
+  --line-dark: #111;
+  --line-light: #bdbdbd;
+  --trs: 0.3s;
+  --white80p: rgba(255, 255, 255, 0.8);
+  --white60p: rgba(255, 255, 255, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  background: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: #E6A034;
+}
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+label,
+button {
+  /* cup */
+  cursor: pointer;
+}
+
+body {
+  font: 1rem/1.5 'Cafe24ClassicType-Regular', sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden; /* ovxh */
+  word-break: keep-all; /* wbka */
+  text-transform: capitalize; /* ttc */
+}
+
+.inner {
+  width: 1344px;
+  width: 134.4rem; /* w134.4r */
+  height: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26.9rem;
+  border-bottom: 2px solid #E6A034;
+}
+
+.gnb {
+  display: flex;
+  margin-left: auto; /* mla */
+  margin-right: 5rem; /* mr5r */
+}
+
+.gnb li a {
+  display: block;
+  /* border: 1px solid #000; */
+  /* fw700+fz2r */
+  font-size: 2rem;
+  color: #fff;
+  padding: 1rem 3rem;
+  position: relative;
+}
+
+.gnb li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* trftx */
+  display: block;
+  width: 0%;
+  height: 3px;
+  background: #E6A034;
+  transition: var(--trs);
+}
+
+.gnb li a:hover::after {
+  width: 100%;
+}
+
+.logo a {
+  display: block;
+  width: 22.2rem; /* w28r */
+  height: 16.9rem; /* h21r */
+  background: url(../img/알라딘\ 로고.png) no-repeat 0 0 / 100%;
+}
+
+.go-top {
+  position: fixed;
+  bottom: 22.7rem;
+  right: 29rem;
+  /* w5.4r+h5.4r+bdrs50p+bg */
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  background: #000 url(../img/ico-arr-t.svg) no-repeat 50%;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0; /* op0 */
+  transition: var(--trs);
+}
+
+.go-top.active {
+  opacity: 1;
+  bottom: calc(22.7rem - 20px);
+}
+
+#footer {
+  background: var(--bg-dark);
+  color: var(--white80p);
+  padding: 7.7rem 0;
+}
+
+#foot-logo {
+  filter: saturate(0);
+  filter: invert(100%);
+  filter: brightness(0);
+}
+
+#footer address {
+  margin-top: 2.8rem;
+}
+
+#footer address dl {
+  font-size: 1.5rem;
+  color: var(--white80p);
+  /* background: #5f5; */
+  width: 30rem;
+  display: flex;
+  gap: 0.8rem 1.6rem;
+  flex-wrap: wrap;
+}
+
+#footer address dl dt {
+  font-weight: 700;
+}
+
+#footer address dl dd {
+  text-transform: lowercase; /* ttl : 소문자로 표시 */
+}
+
+#footer address dl dd:nth-of-type(2),
+#footer address dl dd:nth-of-type(3) {
+  /* background: #f00; */
+  width: calc(100% - 6rem);
+}
+
+#footer address p {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 3.2rem;
+}
+
+.btn-basic {
+  border: 1px solid var(--title-color);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 4.8rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--title-color);
+  transition: 0.4s;
+}
+
+.btn-basic::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/ico-btn-arr.svg) no-repeat 50%;
+  transition: transform ease-in-out 0.4s 0.4s;
+}
+
+.btn-basic:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.btn-basic:hover::after {
+  background-image: url(../img/ico-arr-r.svg);
+  background-size: 40%;
+  transform: translateX(10px);
+}
+
+/* animation */
+/* 1. 동작을 만든다 : @keyframes*/
+@keyframes reveal-right {
+  0% {
+    transform: translateX(-50px); /* trftx */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 2. 동작을 적용한다 : animation*/
